@@ -7,8 +7,17 @@ let navMenu = document.querySelector(".nav-menu");
 
 menuBtn.addEventListener("click", toggleMenu);
 
-function toggleMenu() {
+// event listener for the window
+window.addEventListener("click", closeMenu);
+
+// function to close the menu
+function toggleMenu(event) {
+  event.stopPropagation();
   navMenu.classList.toggle("show");
+}
+
+function closeMenu(e) {
+  navMenu.classList.remove("show");
 }
 
 
